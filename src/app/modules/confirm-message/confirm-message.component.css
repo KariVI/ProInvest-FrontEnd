@@ -1,0 +1,24 @@
+mat-dialog-title{
+    color: rgb(179, 115, 240);
+}
+
+button {
+    color: #fffafa;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #2ccf8b;
+    border: 1px solid #2ccf8b;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #6ee7b5,
+                -6px -6px 12px #ffffff;
+   }
+   
+   button:hover {
+    border: 1px solid white;
+   }
+   
+   button:active {
+    box-shadow: 4px 4px 12px #c5c5c5,
+                -4px -4px 12px #ffffff;
+   }

@@ -1,0 +1,34 @@
+<div class="principal">
+<div class="row">
+    <div class="col-6">
+       <img src="assets/images/principal.png" class="img-fluid" alt="Imagen principal"> 
+    </div>
+    <div class="col-6" >
+        <h1 class="text-center title"> ProInvest App</h1>
+        <form class="login-form" [formGroup]="loginGroup">
+            <div class="form-outline mb-4" >
+                <label class="form-label" for="txUser">Usuario</label>
+                <input type="email" id="txUser" class="form-control"  formControlName="email" maxlength="200"/>
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label" for="txPassword">Contraseña</label>
+                <input type="password" id="txPassword" class="form-control" formControlName="password" maxlength="150"/>
+            </div>
+            <br>
+            <br>
+            
+            <button type="button" class="btn btn-primary btn-block mb-4" (click)="login()">Inicia sesión</button>
+            <div class="row">
+            <div class="text-center">
+                <p>¿No estas registrado? <a routerLink="/usuario" routerLinkActive="active" ariaCurrentWhenActive="page">Registrate</a></p>
+            </div>
+        </div>
+            <router-outlet></router-outlet> 
+        </form>
+
+        <div class="row">
+            <div></div>
+        </div>
+    </div>
+</div>
+</div>

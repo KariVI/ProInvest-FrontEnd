@@ -1,0 +1,69 @@
+.user-form{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+a{
+    text-decoration:none;
+    color:white;
+}
+.row{
+    margin-right: 30%;
+}
+
+.col-4{
+    padding-left: 5% !important;
+    padding-right: 7%!important;
+    margin-top: 1%!important;
+    margin-left: 40%!important;
+    padding-bottom: 6%!important;
+    background-color: white!important;
+    border-radius: 40px;
+
+    width: 60%!important;
+}
+
+button{
+
+        color: white;
+        font-family: inherit;
+        padding: 0.35em;
+        padding-left: 2.5em;
+        font-size: 17px;
+        font-weight: 500;
+        border-radius: 0.9em;
+        border: none;
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        height: 2.8em;
+        width: 10em;
+        padding-right: 2.0em;
+      
+    
+}
+
+.col-5{
+    margin: 2px 1px 2px 1px;
+}
+
+
+.principal{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #7F7FD5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.img-fluid{
+    max-width: 70%;
+}
+
+.warning{
+    color: #db7070;
+}
+  

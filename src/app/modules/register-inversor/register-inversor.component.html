@@ -1,0 +1,16 @@
+<app-register-profile *ngIf="contSections==0"
+     [inversor]="inversor"
+    (previousPhase)="previousSection()"
+    (nextPhase)="nextSection($event)"
+></app-register-profile>
+<app-register-direction *ngIf="contSections==1"
+    [direction]="direction"
+    (previousPhase)="previousSection()"
+    (nextPhase)="nextSection($event)"
+></app-register-direction>
+
+<app-register-info-financial *ngIf="contSections==2"
+    (previousPhase)="previousSection()"
+    (nextPhase)="nextSection($event)"
+>
+</app-register-info-financial>

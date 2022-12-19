@@ -1,0 +1,69 @@
+    <div class="row">
+        <div class="col-9">
+            <h1 class="text-left title"> Información Financiera</h1>
+            <form class="user-form" [formGroup]="infoFinanceGroup">
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="cbBank">Banco: </label> 
+                    <br>
+                    <select class="round "  aria-placeholder="Selecciona un banco" id="cbBank"  formControlName="bank" aria-label="Default select example">
+                      
+                      <option value="none" selected disabled >Selecciona un banco</option>
+                      <option *ngFor="let bank of $banks | async" [value]="bank.idBanco">{{bank.nombre}}</option>                     
+                    </select>
+                    
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="txClabe">Clabe: </label>
+                    <input type="text" id="txClabe" formControlName="clabe" class="form-control" />
+                    <div class="padding-tl">
+                        <div *ngFor="let validation of validationMessages.clabe">
+                          <span
+                            class="text-blue"
+                            *ngIf="infoFinanceGroup.get('clabe')!.hasError(validation.type)"
+                          >
+                            {{ validation.message }}
+                          </span>
+                        </div>     
+                    </div>  
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="txAccountBank">Cuenta Bancaria: </label>
+                    <input type="text" id="txAccountBank"  formControlName="accountBank" class="form-control" />
+                    <div class="padding-tl">
+                      <div *ngFor="let validation of validationMessages.accountBank">
+                        <span
+                          class="text-blue"
+                          *ngIf="infoFinanceGroup.get('accountBank')!.hasError(validation.type)"
+                        >
+                          {{ validation.message }}
+                        </span>
+                      </div>     
+                  </div>  
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" aria-placeholder="Selecciona un origen fondos" for="cbSavings">Origen de Fondos: </label> 
+                    <br>
+                    <select class="round "  id="cbSavings" formControlName="savings" aria-label="Default select example">
+                      <option value="none" selected disabled >Selecciona un origen de fondo</option>
+                      
+                      <option *ngFor="let source of $sourceFunds | async" [value]="source.idOrigenFondo" >{{source.origen}}</option>                     
+
+                    </select>
+                   
+                </div>   
+
+                <div class="form-outline mb-4">
+                    <div class="row">
+                        
+                    <div class="col-6">
+                        <button type="button" class="col-5 btn btn-secondary" (click)="returnInfo()" >Regresar</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="col-5 btn  btn-success btn-secondary" (click)="nextSection(newInfoFinancial)"  [disabled]="evaluateForm()">Registrar</button>
+                    </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+

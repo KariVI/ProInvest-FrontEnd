@@ -1,0 +1,6 @@
+{
+    "/userInformation":{
+        "target": "http://localhost:8084",
+        "secure":false
+    }
+}

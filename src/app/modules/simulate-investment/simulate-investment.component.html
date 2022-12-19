@@ -1,0 +1,29 @@
+<div class="principal">
+    <div class="row">
+        <div class="col-11">
+                <form class="row" [formGroup]="invesmentGroup">
+                <div class="col-6">
+                    <div class="form-outline mb-2">
+                        <label class="form-label" for="txMoney">Monto a invertir:*</label>
+                        <input type="number" id="txMoney" min="1"  formControlName="money" class="form-control" required/>
+                    </div>
+                </div>
+              
+                <div class="col-6">
+                    <button (click)="simulate()" [disabled]="invesmentGroup.invalid"> Simular inversión</button>
+                </div>
+            </form>
+            <div class="row">
+                <h4 class="text-blue">Por fines ilustrativos de la simulación de una inversión se usará una tasa de interés de 10.84% basada en el CETES de México</h4>
+            </div>
+            <div class="row div-chart">
+                <div style="display: block; width: 400px">
+                    <canvas id="canvas" height="320">{{ chart }}</canvas>
+                  </div>
+               </div>
+               <div class="row">
+                <a  class="extra-margin" [href]="showRegisterPage()"><button > Iniciar inversión</button></a>
+               </div>
+            </div> 
+    </div>
+</div>

@@ -1,0 +1,156 @@
+
+    <div class="row">
+        <div class="col-11">
+            <h1 class="text-left title"> Datos personales</h1>
+            <form class="user-form" [formGroup]="inversorGroup">
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="txName">Nombre*</label>
+                      <input  type="text" id="txName" class="form-control"  maxLength="150" formControlName="names" required/>
+                    <div class="padding-tl" id="names">
+                        <div *ngFor="let validation of validationMessages.names">
+                          <span
+                            class="text-blue"
+                            *ngIf="inversorGroup.get('names')!.hasError(validation.type)"
+                          >
+                            {{ validation.message }}
+                          </span>
+                        </div>     
+                    </div>
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="txLastFatherName">Apellido Paterno*</label>
+                    <input type="text" id="txLastFatherName" class="form-control"  maxLength="100" formControlName="lastFatherName" required />
+                    <div class="padding-tl">
+                        <div *ngFor="let validation of validationMessages.lastFatherName">
+                          <span
+                            class="text-blue"
+                            *ngIf="inversorGroup.get('lastFatherName')!.hasError(validation.type)"
+                          >
+                            {{ validation.message }}
+                          </span>
+                        </div>     
+                    </div>
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="txLastMotherName">Apellido Materno*</label>
+                    <input type="text" id="txLastMotherName" class="form-control"   maxLength="100" formControlName="lastMotherName" required/>
+                    <div class="padding-tl">
+                        <div *ngFor="let validation of validationMessages.lastMotherName">
+                          <span
+                            class="text-blue"
+                            *ngIf="inversorGroup.get('lastMotherName')!.hasError(validation.type)"
+                          >
+                            {{ validation.message }}
+                          </span>
+                        </div>     
+                    </div>
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="txRFC">RFC* </label>
+                    <input type="text" id="txRFC" class="form-control"  maxLength="20" formControlName="rfc" required/>
+                    <div class="padding-tl">
+                        <div *ngFor="let validation of validationMessages.rfc">
+                          <span
+                            class="text-blue"
+                            *ngIf="inversorGroup.get('rfc')!.hasError(validation.type)"
+                          >
+                            {{ validation.message }}
+                          </span>
+                        </div>     
+                    </div>
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="txDate">Fecha de nacimiento*</label>
+                    <input type="date" id="txDate" class="form-control" formControlName="date" required/>
+                    <div class="padding-tl">
+                        <div *ngFor="let validation of validationMessages.date">
+                          <span
+                            class="text-blue"
+                            *ngIf="inversorGroup.get('date')!.hasError(validation.type)"
+                          >
+                            {{ validation.message }}
+                          </span>
+                        </div>     
+                    </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="txDate">Celular*</label>
+                  <input type="text" id="txDate" class="form-control" placeholder="581245567890" max="10" formControlName="cellphone" required/>
+                  <div class="padding-tl">
+                      <div *ngFor="let validation of validationMessages.cellphone">
+                        <span
+                          class="text-blue"
+                          *ngIf="inversorGroup.get('cellphone')!.hasError(validation.type)"
+                        >
+                          {{ validation.message }}
+                        </span>
+                      </div>     
+                  </div>
+              </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="cbGrade">Grado académico:* </label> 
+                    <br>
+                    <select class="round " formControlName="grade" id="cbGrade" aria-label="Default select example" >
+                        <option value="1">Primaria</option>
+                        <option value="3">Secundaria</option>
+                        <option value="3">Preparatoria</option>
+                        <option value="4">Carrera Técnica</option>
+                        <option value="5">Universidad</option>
+                        <option value="6">Maestría</option>
+                        <option value="7">Doctorado</option>
+                    </select>
+                    <div class="padding-tl">
+                        <div *ngFor="let validation of validationMessages.grade">
+                          <span
+                            class="text-blue"
+                            *ngIf="inversorGroup.get('grade')!.hasError(validation.type)"
+                          >
+                            {{ validation.message }}
+                          </span>
+                        </div>     
+                    </div>
+                </div>
+  
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="txWork">Profesión*</label>
+                    <input type="text" id="txWork" class="form-control"  maxLength="100" formControlName="work" required/>
+                    <div class="padding-tl">
+                        <div *ngFor="let validation of validationMessages.work">
+                          <span
+                            class="text-blue"
+                            *ngIf="inversorGroup.get('work')!.hasError(validation.type)"
+                          >
+                            {{ validation.message }}
+                          </span>
+                        </div>     
+                    </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="txEmail">Escribe tu email para validar a nombre de quien será la inversión</label>
+                  <input type="email" id="txEmail" class="form-control"  maxLength="100" formControlName="email" required/>
+                  <div class="padding-tl">
+                      <div *ngFor="let validation of validationMessages.email">
+                        <span
+                          class="text-blue"
+                          *ngIf="inversorGroup.get('email')!.hasError(validation.type)"
+                        >
+                          {{ validation.message }}
+                        </span>
+                      </div>     
+                  </div>
+              </div>
+                <div class="form-outline mb-4">
+                    <div class="row">
+                    <div class="col-6">
+                      <a [href]="showRegisterPage()"> <button type="button" class="col-5 btn btn-secondary" >Cancelar</button> </a>
+                    </div>
+                    <button type="submit" class="cssbuttons-io-button"  [disabled]="evaluateForm()" (click)="nextSection(newInversor)" >Siguiente
+                        <div class="icon">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
+                        </div>
+                    </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
