@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environmentURL } from 'src/app/enviroments/enviroments';
 import { UserService } from 'src/app/services/user.service';
@@ -18,7 +19,9 @@ export class RegisterProfileComponent implements OnInit {
 
   constructor(private fb: FormBuilder, 
     public dialog: MatDialog,
-    private userService: UserService) { }
+    private userService: UserService,
+    private router: Router,
+    private route: ActivatedRoute) { }
   @Input() inversor: Inversor = new Inversor();
   @Output() previousPhase = new EventEmitter<void>();
   @Output() nextPhase = new EventEmitter<any>();
@@ -51,8 +54,8 @@ export class RegisterProfileComponent implements OnInit {
 
     
   showRegisterPage(){
-    let result = environmentURL.baseClient + "principal";
-    return result;
+    this.router.navigate([`/principal`], { relativeTo: this.route });
+
   }
   
     public validationMessages = {

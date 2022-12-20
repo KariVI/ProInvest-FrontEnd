@@ -142,7 +142,7 @@
                 <div class="form-outline mb-4">
                     <div class="row">
                     <div class="col-6">
-                      <a [href]="showRegisterPage()"> <button type="button" class="col-5 btn btn-secondary" >Cancelar</button> </a>
+                      <button type="button" class="col-5 btn btn-secondary" (click)="showRegisterPage()" >Cancelar</button> 
                     </div>
                     <button type="submit" class="cssbuttons-io-button"  [disabled]="evaluateForm()" (click)="nextSection(newInversor)" >Siguiente
                         <div class="icon">
