@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Chart } from 'chart.js'
 import {environmentURL} from '../../enviroments/enviroments'
 @Component({
@@ -11,7 +12,9 @@ export class SimulateInvestmentComponent implements OnInit {
 
   
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   performance: number[] = [0.0,0.0,0.0,0.0,0.0]
   invesmentGroup:FormGroup= this.fb.group({
@@ -74,8 +77,7 @@ export class SimulateInvestmentComponent implements OnInit {
   }
 
   showRegisterPage(){
-    let result = environmentURL.baseClient + "inversionista";
-    return result;
+    this.router.navigate([`/inversionista`], { relativeTo: this.route });
   }
 
   simulate(){
